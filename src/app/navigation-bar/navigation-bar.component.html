@@ -1,0 +1,16 @@
+<mat-toolbar>
+    <div class="logo" (click)="navigate('home')">
+        <img src="../../assets/logos/MH_logo_2020_03_17_s.png"/>
+    </div>
+    <div class="headers">
+        <span (click)="navigate('about-me')" [ngClass]="{'active' : currentSections.indexOf('about-me') !== -1}">Über mich</span>
+        <span (click)="navigate('news')" [ngClass]="{'active' : currentSections.indexOf('news') !== -1}">News</span>
+        <span (click)="navigate('sponsoring')" [ngClass]="{'active' : currentSections.indexOf('sponsoring') !== -1}">Sponsoring</span>
+        <span (click)="navigate('contact')" [ngClass]="{'active' : currentSections.indexOf('contact') !== -1}">Kontakt</span>
+    </div>
+    <div class="icons">
+        <a href="https://www.facebook.com/michelle.heimberg.fanpage/" target ="_blank"><img src="../../assets/icons/facebook.png"></a>
+        <a href="https://www.instagram.com/michelle_heimberg" target ="_blank"><img src="../../assets/icons/instagram.png"></a>
+        <a href="https://www.linkedin.com/in/michelle-heimberg-oly-058b79255" target ="_blank"><img src="../../assets/icons/linkedin.png"></a>
+    </div>
+</mat-toolbar>

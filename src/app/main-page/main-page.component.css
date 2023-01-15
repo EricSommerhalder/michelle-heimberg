@@ -1,0 +1,24 @@
+.logo-top {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    z-index: 1;
+    width: 20%;
+}
+.container {
+    background-color: snow;
+    background-image: url("../../assets/logos/logo_transparent.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 64px;
+}
+.footer {
+    display: flex;
+    justify-content: center;
+    background-color: gray;
+}
+.footer p {
+    margin: 5px;
+}

@@ -1,0 +1,79 @@
+<h1>News</h1>
+<div class="container">
+
+<div class="image-grid">
+    <div *ngFor="let post of posts" [ngSwitch]="post.mediaType">
+        <div class="image-container" *ngSwitchCase="'IMAGE'">
+            <div class="icon-image" (click)="imageClicked(post)">
+                <img [src]="post.url">
+                <div class="caption-container">
+                    <div class="caption">
+                        {{post.caption}}
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="image-container" *ngSwitchCase="'VIDEO'">
+            <div class="icon-image" (click)="imageClicked(post)">
+                <i class="fas fa-film icon"></i>
+                <img [src]="post.thumbnail" >
+                <div class="caption-container">
+                    <div class="caption">
+                        {{post.caption}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<app-insta-carousel-viewer *ngSwitchCase="'CAROUSEL_ALBUM'" [data]="post"></app-insta-carousel-viewer>-->
+        
+        
+        <div class="image-container" *ngSwitchCase="'CAROUSEL_ALBUM'">
+            <div class="icon-image" (click)="imageClicked(post)">
+                <i class="fas fa-solid fa-images icon"></i>
+                <img [src]="post.url">
+                <div class="caption-container">
+                    <div class="caption">
+                        {{post.caption}}
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+</div>
+</div>
+<div id="modal" class="pop-up" (click)="close()">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      
+        <img  class="modal-media" *ngIf="clickedPost.mediaType === 'IMAGE'" [src]="clickedPost.url" (click)="modalImageClicked(false); $event.stopPropagation();">
+        <video #videoPlayer class="modal-media" *ngIf="clickedPost.mediaType === 'VIDEO'" [poster]="clickedPost.thumbnail" controls (click)="modalImageClicked(true); $event.stopPropagation(); $event.preventDefault();">
+            <source [src]="clickedPost.url">
+        </video>
+        <div class="carousel-viewer" *ngIf="clickedPost.mediaType === 'CAROUSEL_ALBUM'">
+            <img *ngIf="activeChild.mediaType === 'IMAGE'" [src]="activeChild.url" (click)="modalImageClicked(false); $event.stopPropagation();">
+            <video #videoPlayer *ngIf="activeChild.mediaType === 'VIDEO'" [poster]="activeChild.thumbnail" controls (click)="modalImageClicked(true); $event.stopPropagation(); $event.preventDefault();">
+                <source [src]="activeChild.url">
+            </video>
+            <button class="btn-carousel btn-prev" (click)="previousChild(); $event.stopPropagation();">
+                <i class="fas fa-solid fa-arrow-circle-left icon-carousel icon-prev"></i>
+            </button>
+            <button class="btn-carousel btn-next" (click)="nextChild(); $event.stopPropagation();">
+                <i class="fas fa-arrow-circle-right icon-carousel icon-next"></i>
+            </button> 
+        </div>
+        <!--<app-insta-carousel-modal-viewer class="carousel" *ngIf="clickedPost.mediaType === 'CAROUSEL_ALBUM'" [data]="clickedPost"></app-insta-carousel-modal-viewer>-->
+        <!--<app-insta-carousel-viewer *ngIf="clickedPost.mediaType === 'CAROUSEL_ALBUM'" [data]="clickedPost" ></app-insta-carousel-viewer>-->
+      <div class="modal-sidebar">
+        <article class="modal-sidebar-container">
+            <a class="modal-header" href="https://www.instagram.com/michelle_heimberg" target="_blank">@michelle_heimberg</a>
+            <p>{{clickedPost.caption}}</p>
+        </article>
+      </div>
+      <span class="close" (click)="close()">&times;</span>
+    </div>
+  
+  </div>

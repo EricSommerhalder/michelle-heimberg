@@ -1,0 +1,46 @@
+<p>Hi</p>
+<div class="container">
+    <div class="image-container" (click)="imageClicked()">
+        <img *ngIf=" activeChild.mediaType === 'IMAGE'" [src]="activeChild.url" >
+        <div *ngIf=" activeChild.mediaType === 'VIDEO'" class="icon-image">
+            <i class="fas fa-film icon"></i>
+            <img [src]="activeChild.thumbnail">
+        </div>
+        
+        <div class="caption-container">
+            <div class="caption">
+                {{data.caption}}
+            </div>
+        </div>
+    </div>
+    <button class="btn-carousel btn-prev" (click)="previousChild()">
+        <i class="fas fa-arrow-circle-left icon-carousel icon-prev"></i>
+    </button>
+    <button class="btn-carousel btn-next" (click)="nextChild()">
+        <i class="fas fa-arrow-circle-right icon-carousel icon-next"></i>
+    </button>
+    <div *ngIf="show" class="pop-up" (click)="close()">
+
+        <!-- Modal content -->
+        <div class="modal-content" >
+                <img *ngIf="activeChild.mediaType === 'IMAGE'" [src]="activeChild.url" (click)="modalImageClicked(false); $event.stopPropagation();">
+                <video #videoPlayer *ngIf="activeChild.mediaType === 'VIDEO'" [poster]="activeChild.thumbnail" controls (click)="modalImageClicked(true); $event.stopPropagation(); $event.preventDefault();">
+                    <source [src]="activeChild.url">
+                </video>
+                <button class="btn-carousel btn-prev" (click)="previousChild(); $event.stopPropagation();">
+                    <i class="fas fa-arrow-circle-left icon-carousel icon-prev"></i>
+                </button>
+                <button class="btn-carousel btn-next" (click)="nextChild(); $event.stopPropagation();">
+                    <i class="fas fa-arrow-circle-right icon-carousel icon-next"></i>
+                </button>  
+          <div class="modal-sidebar">
+            <article class="modal-sidebar-container">
+                <a class="modal-header" href="https://www.instagram.com/michelle_heimberg" target="_blank">@michelle_heimberg</a>
+                <p>{{data.caption}}</p>
+            </article>
+          </div>
+          <span class="close" (click)="close()">&times;</span>
+        </div>
+      
+      </div>
+</div>

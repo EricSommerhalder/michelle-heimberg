@@ -1,0 +1,34 @@
+<h1>Vielen Dank für Deine Unterstüzung!</h1>
+<div class="container">
+    <img src="../../assets/img/qr_code.png"/>
+    <p>Oder via Iban: <br>Michelle Heimberg<br>5442 Fislisbach<br>CH14 0023 3233 6386 8940 U</p>
+</div>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+        <input type="checkbox" formControlName="anonymous" id="acceptTerms"/>
+        <label for="anonymous">Anonym spenden</label>
+    </div>
+    <div>
+        <label for="name">
+          Name
+        </label>
+        <input id="name" type="text" formControlName="name">
+    </div>
+    <div>
+        <label for="email">
+          E-Mail Adresse
+        </label>
+        <input id="email" type="text" formControlName="email">
+    </div>
+    <div>
+        <label for="address">
+          Address
+        </label>
+        <input id="address" type="text" formControlName="address">     
+    </div>
+    <div>
+        <input type="checkbox" formControlName="listed" id="acceptTerms"/>
+        <label for="listed">Auf Website als Gönner gelisted werden</label>
+    </div>
+    <button class="button" type="submit" [disabled]="form.invalid">Abschicken</button>
+</form>
