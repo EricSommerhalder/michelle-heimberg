@@ -33,8 +33,8 @@ export class InstagramComponent implements OnInit {
   constructor(private instaService: InstagramServiceService) {}
     posts: Post[] = [];
     ngOnInit(): void {
-    this.instaService.getImages(9).subscribe(res => {
-      //this.instaService.getImagesDummy().subscribe(res => {
+    //this.instaService.getImages(9).subscribe(res => {
+      this.instaService.getImagesDummy().subscribe(res => {
         console.log(JSON.stringify(res));
         if (res.hasOwnProperty('data') && Array.isArray(res['data'])){
           for (const image of res['data']) {

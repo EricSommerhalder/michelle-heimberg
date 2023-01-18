@@ -18,10 +18,13 @@ import { InstaCarouselViewerComponent } from './insta-carousel-viewer/insta-caro
 import { ContactComponent } from './contact/contact.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InstaCarouselModalViewerComponent } from './insta-carousel-modal-viewer/insta-carousel-modal-viewer.component';
+import { PartnerComponent } from './partner/partner.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 const appRoutes: Routes = [
   { path: '', component: MainPageComponent },
   { path: 'become-sponsor/:value', component: BecomeSponserComponent },
-  { path: 'become-sponsor', component: BecomeSponserComponent }
+  { path: 'become-sponsor', component: BecomeSponserComponent },
+  { path: 'partner', component: PartnerComponent}
 ];
 
 @NgModule({
@@ -36,7 +39,9 @@ const appRoutes: Routes = [
     InstagramComponent,
     InstaCarouselViewerComponent,
     ContactComponent,
-    InstaCarouselModalViewerComponent
+    InstaCarouselModalViewerComponent,
+    PartnerComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,

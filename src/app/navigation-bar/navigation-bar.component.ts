@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
+import { LanguageService } from '../language.service';
 @Component({
   selector: 'app-navigation-bar',
   templateUrl: './navigation-bar.component.html',
@@ -7,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class NavigationBarComponent implements OnInit {
   currentSections: string[] = [];
-  constructor(private router: Router) { }
+  constructor(private router: Router, public language: LanguageService) { }
   ngOnInit(): void {
   }
 
@@ -25,6 +26,14 @@ export class NavigationBarComponent implements OnInit {
         inline: "nearest"
         });
   }
+  }
+
+  switchLanguage(){
+    if (this.language.getLanguage() === 'en'){
+      this.language.setLanguage('de');
+    } else {
+      this.language.setLanguage('en');
+    }
   }
   @HostListener('window:scroll', ['$event']) getScrollHeight(event: any) {
     this.currentSections = [];

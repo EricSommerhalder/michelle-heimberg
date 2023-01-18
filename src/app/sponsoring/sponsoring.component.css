@@ -17,7 +17,6 @@ body {
 	vertical-align: top;
 	margin: 10px;
 	font-family: 'helvetica', san-serif;
-	min-height: 25vh;
 	background: #262a2b;
 	border: 1px solid #252727;
 	text-align: left;
@@ -119,6 +118,10 @@ background: linear-gradient(to right, #be8aaf, #84507d);
 .intro {
 	width: 80%;
 }
+.sponsor-button-container {
+	display: flex;
+	justify-content: center;
+}
 .seperator-button-container {
 	text-align: center;
 	display:flex;
@@ -137,7 +140,7 @@ background: linear-gradient(to right, #be8aaf, #84507d);
 	width: 100%;
 	transform: translateY(-50%);
   }
-  .seperator-button {
+  .seperator-button, .sponsor-button {
 	z-index: 1;
 	padding: 10px;
 	cursor: pointer;

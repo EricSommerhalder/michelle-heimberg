@@ -1,10 +1,14 @@
     <div class="container">
         <app-carousel [images]="images" [autoSlide]="true" [controls]="false" id="home"></app-carousel>
-        <app-about-me id="about-me"></app-about-me>
+        <div id="about-me">
+            <app-about-me></app-about-me>
+        </div>
         <app-parallax src="assets/img/carousel2.jpg" [height]="50"></app-parallax>
-        <app-instagram id="news"></app-instagram>
+        <!--<app-instagram id="news"></app-instagram>-->
         <app-parallax src="assets/img/carousel2.jpg" [height]="50"></app-parallax>
-        <app-sponsoring id="sponsoring"></app-sponsoring>
+        <div id="sponsoring">
+            <app-sponsoring></app-sponsoring>
+        </div>
         <app-parallax src="assets/img/carousel2.jpg" [height]="50"></app-parallax>
         <app-contact id="contact"></app-contact>
         <div class="footer">

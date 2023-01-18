@@ -9,7 +9,7 @@
   justify-content: center;
 }
 .avatar {
-  width: 30%;
+  width: 20%;
 }
 
 .avatar-image {
@@ -85,14 +85,4 @@ li::before {
 }
 li + li {
   border-top: 1px solid rgba(255,255,255,0.2);
-}
-.sponsors {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  left: 10px;
-}
-.sponsors img {
-  width: 12%;
-  padding: 0 0 5% 0;
 }

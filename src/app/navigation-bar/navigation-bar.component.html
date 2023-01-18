@@ -7,10 +7,13 @@
         <span (click)="navigate('news')" [ngClass]="{'active' : currentSections.indexOf('news') !== -1}">News</span>
         <span (click)="navigate('sponsoring')" [ngClass]="{'active' : currentSections.indexOf('sponsoring') !== -1}">Sponsoring</span>
         <span (click)="navigate('contact')" [ngClass]="{'active' : currentSections.indexOf('contact') !== -1}">Kontakt</span>
+        <span (click)="navigate('partner')">Partner</span>
     </div>
+    <!--<button (click)="switchLanguage()">{{language.getLanguage() == 'en' ? 'Deutsch' : 'English'}}</button>-->
     <div class="icons">
         <a href="https://www.facebook.com/michelle.heimberg.fanpage/" target ="_blank"><img src="../../assets/icons/facebook.png"></a>
         <a href="https://www.instagram.com/michelle_heimberg" target ="_blank"><img src="../../assets/icons/instagram.png"></a>
         <a href="https://www.linkedin.com/in/michelle-heimberg-oly-058b79255" target ="_blank"><img src="../../assets/icons/linkedin.png"></a>
+        
     </div>
 </mat-toolbar>

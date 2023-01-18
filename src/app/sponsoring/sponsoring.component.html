@@ -17,7 +17,6 @@
 		<p>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum consequat odio ut convallis. Curabitur blandit dolor nulla, eu viverra metus interdum ut.
 		</p>
-		<button (click)="goToSubPage('100')">Sponsor werden</button>
 	</li>
 	<li>
 		<h2>250</h2>
@@ -26,7 +25,6 @@
 		<p>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum consequat odio ut convallis. Curabitur blandit dolor nulla, eu viverra metus interdum ut.
 		</p>
-		<button (click)="goToSubPage('250')">Sponsor werden</button>
 	</li>
 	<li>
 		<h2>500</h2>
@@ -35,7 +33,6 @@
 		<p>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum consequat odio ut convallis. Curabitur blandit dolor nulla, eu viverra metus interdum ut.
 		</p>
-		<button (click)="goToSubPage('500')">Sponsor werden</button>
 	</li>
 	<li>
 		<h2>Frei</h2>
@@ -44,9 +41,12 @@
 		<p>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum consequat odio ut convallis. Curabitur blandit dolor nulla, eu viverra metus interdum ut.
 		</p>
-		<button (click)="goToSubPage('frei')">Sponsor werden</button>
 	</li>
 </ul>
+<div class="sponsor-button-container">
+	<button class="sponsor-button" (click)="goToSubPage('frei')">Sponsor werden</button>
+</div>
+
 <div class="seperator-button-container">
   <button class="seperator-button" (click)="toggleExtended()">{{extended ? "aktive Gönner verstecken" : "aktive Gönner"}}</button>
 </div>

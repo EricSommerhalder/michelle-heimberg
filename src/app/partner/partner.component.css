@@ -1,0 +1,11 @@
+.container {
+    margin-top: 64px;
+}
+.sponsors {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .sponsors img {
+    width: 20%;
+  }
