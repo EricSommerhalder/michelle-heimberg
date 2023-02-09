@@ -1,0 +1,39 @@
+mat-toolbar {
+    position: fixed;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    background-color: 	snow;
+    border-bottom: 1px solid gray;
+    height: 96px;
+    font-family: "Julius Sans One", sans-serif;
+}
+
+
+.active, a:hover {
+    opacity: 1;
+}
+.headers {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+a {
+    padding: 10px;
+    cursor: pointer;
+    opacity: 0.5;
+    text-decoration: none;
+    color:black;    
+}
+.logo {
+    cursor: pointer;
+}
+.logo img{
+    width: 60px;
+}
+
+.icons img {
+    width: 40px;
+    padding: 10px;
+}

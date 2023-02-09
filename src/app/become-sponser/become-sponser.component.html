@@ -1,34 +1,39 @@
-<h1>Vielen Dank für Deine Unterstüzung!</h1>
+
 <div class="container">
-    <img src="../../assets/img/qr_code.png"/>
-    <p>Oder via Iban: <br>Michelle Heimberg<br>5442 Fislisbach<br>CH14 0023 3233 6386 8940 U</p>
+    <h1>Sponsor werden</h1>
+    <article class="intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies laoreet neque. Nam sit amet magna eu elit accumsan interdum a vel risus. Suspendisse ac finibus nunc, mollis imperdiet lorem. Sed scelerisque elit id magna gravida, ut ultricies lorem hendrerit. Curabitur bibendum ornare libero non auctor. Duis efficitur, nisl eget sagittis ultrices, lacus ligula tempus urna, dictum vehicula arcu orci eget odio. Morbi rutrum fringilla facilisis. Quisque lacus libero, gravida vitae arcu sit amet, ullamcorper efficitur mi. Curabitur non bibendum ante, nec commodo nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla a fringilla neque. Fusce faucibus, justo iaculis pellentesque semper, risus augue aliquam metus, a luctus magna justo non justo. Fusce laoreet nisi ut efficitur tincidunt. Sed porta urna ut erat rhoncus maximus vel et enim. Duis tempus, ipsum vitae pretium condimentum, lorem mi tincidunt ex, vitae dignissim metus lorem sit amet ipsum. Mauris vitae justo eget sem posuere posuere. Phasellus et mollis arcu. Nullam volutpat sapien id massa ornare, sit amet luctus risus pellentesque. Nullam volutpat, mi at dapibus fermentum, ante dui mattis magna, ac pellentesque ipsum lectus in sem. Nunc sollicitudin nisl urna, sit amet elementum lacus efficitur ac. Cras ipsum lectus, feugiat et rutrum ac, sodales vel velit. Sed bibendum, nibh in rhoncus aliquet, est sapien tincidunt neque, quis efficitur nisl ligula at ipsum. Nullam nisi lacus, accumsan a iaculis cursus, facilisis ut purus. In euismod dui felis, at ultricies erat iaculis eget. Duis varius metus lacus, sit amet fringilla erat vestibulum sit amet. Quisque non sapien mauris. Maecenas viverra mi ligula, eget pellentesque ligula luctus vel. Sed a tellus feugiat elit vehicula bibendum. Donec tempor interdum augue a porta. Suspendisse egestas orci luctus ante pulvinar dictum a non ante. Morbi varius et nisi sed malesuada. Quisque commodo sapien accumsan ante consequat pharetra. Nullam a mi quis nisl ultricies scelerisque ut eget neque. Quisque fermentum iaculis tristique.</article>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="input-container">
+            <label for="name">
+              Name
+            </label>
+            <input id="name" type="text" formControlName="name">
+        </div>
+        <div class="input-container">
+            <label for="email">
+              E-Mail Adresse
+            </label>
+            <input id="email" type="text" formControlName="email">
+        </div>
+        <div class="input-container">
+            <label for="address">
+              Addresse
+            </label>
+            <input id="address" type="text" formControlName="address">     
+        </div>
+        <div class="input-container">
+            <label for="amount">
+              Betrag
+            </label>
+            <input id="amount" type="text" formControlName="amount">     
+        </div>
+        <div class="input-container">
+            <label for="listed">Auf Website als Gönner gelistet werden</label>
+            <input type="checkbox" formControlName="listed" id="acceptTerms"/>
+            
+        </div>
+        <button class="button" type="submit" [ngClass]="{'invalid': form.invalid}" [disabled]="form.invalid">Abschicken</button>
+    </form>
+    <h2>Für anonyme Spenden</h2>
+    <p>Credit Suisse, CH-8001 Zürich<br>CH32 0483 5163 3359 8000 0<br>Michelle Luisa Heimberg<br>Steinäckerstrasse 17<br>CH-5442 Fislisbach</p>
 </div>
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <div>
-        <input type="checkbox" formControlName="anonymous" id="acceptTerms"/>
-        <label for="anonymous">Anonym spenden</label>
-    </div>
-    <div>
-        <label for="name">
-          Name
-        </label>
-        <input id="name" type="text" formControlName="name">
-    </div>
-    <div>
-        <label for="email">
-          E-Mail Adresse
-        </label>
-        <input id="email" type="text" formControlName="email">
-    </div>
-    <div>
-        <label for="address">
-          Address
-        </label>
-        <input id="address" type="text" formControlName="address">     
-    </div>
-    <div>
-        <input type="checkbox" formControlName="listed" id="acceptTerms"/>
-        <label for="listed">Auf Website als Gönner gelisted werden</label>
-    </div>
-    <button class="button" type="submit" [disabled]="form.invalid">Abschicken</button>
-</form>

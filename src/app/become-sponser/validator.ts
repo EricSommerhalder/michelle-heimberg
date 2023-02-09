@@ -5,11 +5,12 @@ import { FormGroup, ValidatorFn } from "@angular/forms";
 export class Validator {
     public validate(): any { // any = ValidatorFn aber kompiler motzt
         return ((formGroup: FormGroup) => {
-          const anonym = formGroup.get('anonymous');
+          //const anonym = formGroup.get('anonymous');
           const name = formGroup.get('name');
           const email = formGroup.get('email');
           const address = formGroup.get('address');
-          if (!anonym || !anonym.value){
+          const amount = formGroup.get('amount');
+          //if (!anonym || !anonym.value){
             if (!name || name.value === ''){
                 return {invalidName: true}
             }
@@ -19,7 +20,10 @@ export class Validator {
             if (!address || address.value === ''){
                 return {invalidAddress: true}
             }
-          }
+            if (!amount || amount.value === ''){
+                return {invalidAmount: true}
+            }
+          //}
           return null;
         });
     }

@@ -33,9 +33,8 @@ export class InstagramComponent implements OnInit {
   constructor(private instaService: InstagramServiceService) {}
     posts: Post[] = [];
     ngOnInit(): void {
-    //this.instaService.getImages(9).subscribe(res => {
-      this.instaService.getImagesDummy().subscribe(res => {
-        console.log(JSON.stringify(res));
+    this.instaService.getImages(9).subscribe(res => {
+      //this.instaService.getImagesDummy().subscribe(res => {
         if (res.hasOwnProperty('data') && Array.isArray(res['data'])){
           for (const image of res['data']) {
             if (image.hasOwnProperty('id')){
@@ -97,9 +96,15 @@ export class InstagramComponent implements OnInit {
   previousChild(): void {
     this.selectedIndex = this.selectedIndex === 0 ? this.clickedPost.children.length - 1 : this.selectedIndex - 1;
     this.activeChild = this.clickedPost['children'][this.selectedIndex];
+    if (this.videoPlayer && this.activeChild.mediaType === 'VIDEO'){
+      this.videoPlayer.nativeElement.src = this.activeChild.url;
+    }
   }
   nextChild(): void {
     this.selectedIndex = this.selectedIndex === this.clickedPost.children.length -1 ? 0 : this.selectedIndex + 1;
     this.activeChild = this.clickedPost['children'][this.selectedIndex];
+    if (this.videoPlayer && this.activeChild.mediaType === 'VIDEO'){
+      this.videoPlayer.nativeElement.src = this.activeChild.url;
+    }
   }
 }

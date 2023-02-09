@@ -1,3 +1,20 @@
-<a routerLink="/" fragment="about-me">Main Page Element</a>
-<a routerLink="/partner">Partner</a>
-<a routerLink="/become-sponsor">Become Sponsor</a>
+
+<mat-toolbar>
+    <a class="logo" routerLink="/" (click)="scrollTo('home')">
+        <img src="../../assets/logos/MH_logo_2020_03_17_s.png"/>
+    </a>
+    <div class="headers">
+        <a routerLink="/" (click)="scrollTo('about-me')" [ngClass]="{'active' : currentSections.indexOf('about-me') !== -1}"><strong>Über mich</strong></a>
+        <a routerLink="/" (click)="scrollTo('news')" [ngClass]="{'active' : currentSections.indexOf('news') !== -1}"><strong>News</strong></a>
+        <a routerLink="/" (click)="scrollTo('sponsoring')" [ngClass]="{'active' : currentSections.indexOf('sponsoring') !== -1}"><strong>Sponsoring</strong></a>
+        <a routerLink="/" (click)="scrollTo('partner')" [ngClass]="{'active' : currentSections.indexOf('partner') !== -1}"><strong>Partner</strong></a>
+        <a routerLink="/" (click)="scrollTo('contact')" [ngClass]="{'active' : currentSections.indexOf('contact') !== -1}"><strong>Kontakt</strong></a>    
+    </div>
+    <!--<button (click)="switchLanguage()">{{language.getLanguage() == 'en' ? 'Deutsch' : 'English'}}</button>-->
+    <div class="icons">
+        <a href="https://www.facebook.com/michelle.heimberg.fanpage/" target ="_blank"><img src="../../assets/icons/facebook.png"></a>
+        <a href="https://www.instagram.com/michelle_heimberg" target ="_blank"><img src="../../assets/icons/instagram.png"></a>
+        <a href="https://www.linkedin.com/in/michelle-heimberg-oly-058b79255" target ="_blank"><img src="../../assets/icons/linkedin.png"></a>
+        
+    </div>
+</mat-toolbar>

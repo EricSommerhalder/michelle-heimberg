@@ -16,10 +16,10 @@ body {
 	position: relative;
 	vertical-align: top;
 	margin: 10px;
-	font-family: 'helvetica', san-serif;
 	background: #262a2b;
 	border: 1px solid #252727;
 	text-align: left;
+	cursor: pointer;
 }
 .tilesWrap li h2 {
 	font-size: 114px;
@@ -141,10 +141,13 @@ background: linear-gradient(to right, #be8aaf, #84507d);
 	transform: translateY(-50%);
   }
   .seperator-button, .sponsor-button {
-	z-index: 1;
-	padding: 10px;
-	cursor: pointer;
-	width: fit-content;
+	background-color: #be8caf;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
   }
   
   .extended-text {
@@ -153,8 +156,11 @@ background: linear-gradient(to right, #be8aaf, #84507d);
 	align-items: center;
 	width: 80%;
 	line-height: 150%;
+
   }
   .extended-container {
 	display: flex;
 	justify-content: center;
+	align-items: center;
+	flex-direction: column;
   }

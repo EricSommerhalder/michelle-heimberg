@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 import {Router} from '@angular/router';
+import { ScrollServiceService } from '../scroll-service.service';
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
@@ -7,25 +8,21 @@ import {Router} from '@angular/router';
 })
 export class MainPageComponent implements OnInit {
   
-  constructor(private router: Router) { }
-  @ViewChild('about-me', { static: true }) aboutMe: ElementRef;
-  @ViewChild('sponsoring', { static: true }) sponsoring: ElementRef
+  constructor(private router: Router, private scroll: ScrollServiceService, private renderer: Renderer2) { }
+
   ngOnInit(): void {
-    console.log(this.aboutMe);
-    console.log(this.sponsoring);
+    if (this.scroll.elementId){
+      setTimeout(() => {
+        console.log("Scrolling to ", document.getElementById(this.scroll.elementId).offsetTop -88);
+        window.scrollTo({
+          top: document.getElementById(this.scroll.elementId).offsetTop -88 ,
+          behavior: 'smooth'
+        });
+      }, 500);
+    }
+
   }
-  ngAfterContentInit() {
-    console.log(this.aboutMe);
-    console.log(this.sponsoring);
-    setTimeout(() => {
-      if (this.router.url.split('#')[1] === 'about-me') {
-        this.aboutMe.nativeElement.scrollIntoView();
-      }
-      if (this.router.url.split('#')[1] === 'sponsoring') {
-        this.sponsoring.nativeElement.scrollIntoView();
-      }
-    });
-  }
+
   /*
   Hardcode images to display in the carousel with their alt texts. Follows format of interface carouselImages.
   */
@@ -33,17 +30,17 @@ export class MainPageComponent implements OnInit {
     {
       src: 'assets/img/carousel1.jpg',
       alt: 'Michelle mit Medallie',
-      imageText: "Elegant"
+      imageText: ""
     },
     {
       src: 'assets/img/carousel2.jpg',
       alt: 'Michelle im Sprung',
-      imageText: "Präzis"
+      imageText: ""
     },
     {
       src: 'assets/img/carousel3.jpg',
       alt: 'Michelle mit neuer Medallie',
-      imageText: "Erfolgsorientiert"
+      imageText: "Bild von Valentin Flauraud"
     }
   ]
 }

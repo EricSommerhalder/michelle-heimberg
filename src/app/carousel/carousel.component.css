@@ -14,7 +14,7 @@
     width: 100%;
 
     /* Fills remainder of screen */
-    height: calc(100vh - 64px);
+    height: calc(100vh - 96px);
 
     object-fit: cover;
 }
@@ -47,11 +47,10 @@
 }
 .image-text {
     position: absolute;
-    bottom: 12%;
-    right: 15%;
+    bottom: 5%;
+    right: 5%;
     color: white;
-    font-style: italic;
-    font-size: 50px;
+    font-size: 28px;
 }
 .dot-active,
 .dot:hover {

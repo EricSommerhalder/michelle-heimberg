@@ -5,7 +5,7 @@ import { of } from 'rxjs';
   providedIn: 'root'
 })
 export class InstagramServiceService {
-  private access_token = "IGQVJYY2FyeHRyT0VpVXB2ODJwSWd5UXBqLVVKbTl4d0NTZAFAzU1NQb09iTDloZA25ZAN3NySlY5QWpYZAndzS3BoNEZA0azhua19SNkF5Y1g4YllaYWpiUnRrQWNpZATBESDA4bC1lZAGdn";
+  private access_token = "IGQVJWRmRLQlNUaVQ4dEttWW16b2czb1FVNTQwbkRWRXl5ZAmxHUW85TjV1Vl96amJ0Q2IzRGlLMXV6M0d4SnNjaUxPZAnRHQ2RkWUZAuQTk0ZA3dJX1JhOVd6TjB1bUZA2ZA0ZAUSFo1OWJ3";
  
   constructor(private http: HttpClient) { }
   getImages(limit: number) {
