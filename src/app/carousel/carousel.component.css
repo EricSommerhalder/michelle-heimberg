@@ -47,10 +47,10 @@
 }
 .image-text {
     position: absolute;
-    bottom: 5%;
-    right: 5%;
+    bottom: 3%;
+    right: 3%;
     color: white;
-    font-size: 28px;
+    font-size: 18px;
 }
 .dot-active,
 .dot:hover {

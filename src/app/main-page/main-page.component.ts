@@ -30,7 +30,7 @@ export class MainPageComponent implements OnInit {
     {
       src: 'assets/img/carousel1.jpg',
       alt: 'Michelle mit Medallie',
-      imageText: ""
+      imageText: "Bild von Patrick B. Kreamer"
     },
     {
       src: 'assets/img/carousel2.jpg',
