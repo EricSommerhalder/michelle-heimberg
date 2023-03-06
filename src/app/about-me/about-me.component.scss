@@ -1,24 +1,43 @@
-.container {
-    display: flex;
+/*.container {
+    //display: flex;
     //flex-direction: row;
-    justify-content: space-around;
-}
+    //justify-content: space-around;
+}*/
 .list-container {
   width: 100%;
   display: flex;
   justify-content: center;
 }
 .avatar {
-  width: 20%;
+  width: 50%;
   min-height: 100%;
   display: flex;
   justify-content: center;
+  align-items: start;
+}
+.top {
+  display: flex;
+  flex-direction: row;
+
+}
+.top-text{
+  width: 100%;
+  line-height: 150%;
+  font-size: 18px;
+  text-align: justify;
+  padding: 1%;
+  display: flex;
   align-items: center;
 }
-
+.text {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
 .avatar-image {
     /*border-radius: 50%;*/
-    width: 100%;
+    width: 60%;
     padding: 10px; 
 }
 
@@ -67,25 +86,62 @@
   justify-content: center;
   align-items: center;
 }
-.text{
-  width: 40%;
-  line-height: 150%;
-  font-size: 18px;
-  text-align: justify;
-}
-ul {
-  padding: 0;
-}
 
-li {
+.results li {
   display: flex;
   align-items: center;
   padding: 12px 0;
   box-sizing: border-box;
+  position: relative;
+  padding-left: 40px;
 }
 
+.results li::before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: "";
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 20px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 14px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+.results .twelve::before {
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  content: "12";
+  font-weight: bold;
+}
+.results .six::before {
+  /*background-color: black;*/
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  content: "6";
+  font-weight: bold;
+}
+.results .two::before {
+  /*border: 3px solid silver;*/
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  background-color: rgba(192,192,192, 1);
+  content: "2";
+}
+.results .three::before {
+  /*border: 3px solid #a46628;*/
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  background-color: rgba(164, 102, 40, 0.8);
+  content: "3";
+}
 .icon {
   max-width: 50px;
   max-height: 50px;
   padding: 10px;
+}
+h2 {
+  text-align: center;
 }

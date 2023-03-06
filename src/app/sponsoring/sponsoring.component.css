@@ -115,6 +115,9 @@ background: linear-gradient(to right, #be8aaf, #84507d);
 	justify-content: center;
 	line-height: 150%;
 }
+.full-width {
+	width: 80%;
+}
 .intro {
 	width: 80%;
 }

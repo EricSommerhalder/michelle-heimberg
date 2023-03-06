@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 })
 export class SponsoringComponent implements OnInit {
   extended = false;
+  metaExtended = false;
   constructor(private router: Router) { }
 
   ngOnInit(): void {
@@ -16,5 +17,8 @@ export class SponsoringComponent implements OnInit {
   }
   toggleExtended(): void {
     this.extended = !this.extended;
+  }
+  toggleMetaExtended(): void {
+    this.metaExtended = !this.metaExtended;
   }
 }

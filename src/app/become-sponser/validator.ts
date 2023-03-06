@@ -8,7 +8,7 @@ export class Validator {
           //const anonym = formGroup.get('anonymous');
           const name = formGroup.get('name');
           const email = formGroup.get('email');
-          const address = formGroup.get('address');
+          //const address = formGroup.get('address');
           const amount = formGroup.get('amount');
           //if (!anonym || !anonym.value){
             if (!name || name.value === ''){
@@ -17,9 +17,9 @@ export class Validator {
             if (!email || email.value === ''){
                 return {invalidEmail: true}
             }
-            if (!address || address.value === ''){
+            /*if (!address || address.value === ''){
                 return {invalidAddress: true}
-            }
+            }*/
             if (!amount || amount.value === ''){
                 return {invalidAmount: true}
             }

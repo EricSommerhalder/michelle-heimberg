@@ -16,9 +16,13 @@ export class BecomeSponserComponent implements OnInit {
   private sub: any;
   form = this.formBuilder.group({
     name: '',
-    address: '',
-    email: '' ,
+    street: '',
+    plz: '',
+    town: '',
+    phone: '',
+    email: '',
     amount: '',
+    text: '',
     listed: false
   },
   {

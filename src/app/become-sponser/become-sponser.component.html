@@ -10,16 +10,34 @@
             <input id="name" type="text" formControlName="name">
         </div>
         <div class="input-container">
+          <label for="street">
+            Strasse
+          </label>
+          <input id="street" type="text" formControlName="street">
+        </div>
+        <div class="input-container">
+          <label for="plz">
+            Postleitzahl
+          </label>
+          <input id="plz" type="text" formControlName="plz">
+        </div>
+        <div class="input-container">
+          <label for="town">
+            Ort
+          </label>
+          <input id="town" type="text" formControlName="town">
+        </div>
+        <div class="input-container">
+          <label for="phone">
+            Telefon
+          </label>
+          <input id="phone" type="text" formControlName="phone">
+        </div>
+        <div class="input-container">
             <label for="email">
               E-Mail Adresse
             </label>
             <input id="email" type="text" formControlName="email">
-        </div>
-        <div class="input-container">
-            <label for="address">
-              Addresse
-            </label>
-            <input id="address" type="text" formControlName="address">     
         </div>
         <div class="input-container">
             <label for="amount">
@@ -28,8 +46,14 @@
             <input id="amount" type="text" formControlName="amount">     
         </div>
         <div class="input-container">
-            <label for="listed">Auf Website als Gönner gelistet werden</label>
-            <input type="checkbox" formControlName="listed" id="acceptTerms"/>
+          <label for="text">
+            Bemerkung
+          </label>
+          <input id="text" type="text" formControlName="text">     
+      </div>
+        <div class="input-container">
+            <label for="listed">Auf Website gelistet werden</label>
+            <input type="checkbox" formControlName="listed" id="listed"/>
             
         </div>
         <button class="button" type="submit" [ngClass]="{'invalid': form.invalid}" [disabled]="form.invalid">Abschicken</button>

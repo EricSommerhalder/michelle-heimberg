@@ -9,8 +9,14 @@
 	Cras ipsum lectus, feugiat et rutrum ac, sodales vel velit. Sed bibendum, nibh in rhoncus aliquet, est sapien tincidunt neque, quis efficitur nisl ligula at ipsum. Nullam nisi lacus, accumsan a iaculis cursus, facilisis ut purus. In euismod dui felis, at ultricies erat iaculis eget. Duis varius metus lacus, sit amet fringilla erat vestibulum sit amet. Quisque non sapien mauris. Maecenas viverra mi ligula, eget pellentesque ligula luctus vel. Sed a tellus feugiat elit vehicula bibendum. Donec tempor interdum augue a porta. Suspendisse egestas orci luctus ante pulvinar dictum a non ante. Morbi varius et nisi sed malesuada. Quisque commodo sapien accumsan ante consequat pharetra. Nullam a mi quis nisl ultricies scelerisque ut eget neque. Quisque fermentum iaculis tristique.
 	</article>
 </div>
+<div class="sponsor-button-container">
+	<button class="sponsor-button full-width" (click)="toggleMetaExtended()">{{metaExtended ? "Optionen verstecken" : "Optionen wählen und Gönner werden"}}</button>
+</div>
+<div *ngIf="metaExtended">
+
+
 <ul class="tilesWrap">
-	<li (click)="goToSubPage('50')">
+	<li (click)="goToSubPage('100')">
 		<h2>100</h2>
 		<h3>GÖNNER</h3>
 		<h3>100 CHF</h3>
@@ -26,7 +32,7 @@
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum consequat odio ut convallis. Curabitur blandit dolor nulla, eu viverra metus interdum ut.
 		</p>
 	</li>
-	<li (click)="goToSubPage('500')">
+	<li (click)="goToSubPage('1000')">
 		<h2>1000</h2>
 		<h3>GÖNNER</h3>
 		<h3>1000 CHF sponsern</h3>
@@ -46,7 +52,7 @@
 <div class="sponsor-button-container">
 	<button class="sponsor-button" (click)="goToSubPage('frei')">Sponsor werden</button>
 </div>
-
+</div>
 <div class="extended-container">
 <div *ngIf="extended" class="extended-text">
   <p>
